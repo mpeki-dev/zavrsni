@@ -40,19 +40,19 @@ drone.on("close", (event) => {
 });
 drone.on("error", (error) => {
 });
+const imena = [
+"Marin",
+"Luka",
+"Ivica",
+"Ivan",
+"Tomislav",
+"Jakov",
+"Nikola",
+"Dragan",
+"Marko",
+"Ante",
+];  
 function getRandomName() {
-    const imena = [
-        "Marin",
-        "Luka",
-        "Ivica",
-        "Ivan",
-        "Tomislav",
-        "Jakov",
-        "Nikola",
-        "Dragan",
-        "Marko",
-        "Ante"
-    ];
     return imena [Math.floor(Math.random() * imena.length)];
 }
 function getRandomColor() {
@@ -62,7 +62,15 @@ const messages = document.querySelector(".messages");
 const messageFormInput = document.querySelector(".messageFormInput");
 const messageForm = document.querySelector(".messageForm");
 messageForm.addEventListener("submit", sendMessage);
+messageFormInput.addEventListener("input",checkMessageLength);
 
+function checkMessageLength(){
+    const value = messageFormInput.value();
+    if (value.length > 120){
+        alert("Maksimalan broj znakova je 120!");
+        messageFormInput.value=value.substring(0,120);
+    }
+}
 function sendMessage() {
     const value = messageFormInput.value;
     if (value.trim().length === 0) {
@@ -74,6 +82,7 @@ function sendMessage() {
         message: value,
     }); 
 }
+
 function createMemberElement(member) {
     const { name, color } = member.clientData;
     const el = document.createElement("div");
