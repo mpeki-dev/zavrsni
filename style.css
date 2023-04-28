@@ -23,7 +23,7 @@ h1 {
     background: #fff;
     border: 2px solid #000;
     height: 60vh;
-    width: 40%;
+    width: 60%;
     margin: 20px;
     padding: 10px;
     border-radius: 10px;
@@ -54,11 +54,11 @@ h1 {
 .messageFormInput {
   border: 2px solid #000;
   background: snow;
-  width: 80%;
+  width: 45%;
   padding: 10px;
   margin: 0;
   margin-right: 3%;
-  margin-left: 0%;
+  margin-left: 20%;
   border-radius: 10px;
 }
 .button  {
@@ -70,12 +70,14 @@ h1 {
   color: #fff;
   padding: 0 15px;
 }
-
 .button:hover {
     background-color: black;
     color:white;
 }
-    
 .messageSend {
-    width: 40%;
+    width: 100%;
+}
+.messageFormInputCounter{
+    font-size: 18px;
+    text-align: right;
 }
